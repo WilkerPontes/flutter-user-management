@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Central user -->
+  <circle cx="256" cy="115" r="52" fill="url(#blue)"/>
+  <path d="M150 280c0-59 47-106 106-106s106 47 106 106v24H150z"
+        fill="url(#blue)"/>
+
+  <!-- Left user -->
+  <circle cx="120" cy="210" r="42" fill="#3B82F6"/>
+  <path d="M38 342c0-45 37-82 82-82s82 37 82 82v20H38z"
+        fill="#3B82F6"/>
+
+  <!-- Right user -->
+  <circle cx="392" cy="210" r="42" fill="#60A5FA"/>
+  <path d="M310 342c0-45 37-82 82-82s82 37 82 82v20H310z"
+        fill="#60A5FA"/>
+
+  <!-- Connecting base -->
+  <path d="M105 340c42 34 85 50 151 50s109-16 151-50"
+        fill="none" stroke="url(#blue)" stroke-width="34"
+        stroke-linecap="round"/>
+</svg>
