@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_user_management/app/theme/app_colors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -28,11 +29,11 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Text(
                   "Bem-vindo de volta",
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 Text(
                   "Faça login para continuar",
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 const SizedBox(
                   height: 20,
@@ -41,9 +42,13 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     label: Text(
                       "E-mail",
-                      style: TextStyle(fontWeight: FontWeight.w700),
+                      style: Theme.of(context).textTheme.labelLarge,
                     ),
                     border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        width: 1,
+                        color: Theme.of(context).colorScheme.surface,
+                      ),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
@@ -55,9 +60,13 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     label: Text(
                       "Senha",
-                      style: TextStyle(fontWeight: FontWeight.w700),
+                      style: Theme.of(context).textTheme.labelLarge,
                     ),
                     border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        width: 1,
+                        color: Theme.of(context).colorScheme.surface,
+                      ),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
@@ -70,7 +79,9 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     Text(
                       "Esqueceu sua senha?",
-                      style: TextStyle(color: Colors.blue),
+                      style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                        color: AppColors.primary,
+                      ),
                     ),
                   ],
                 ),
@@ -81,7 +92,8 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      foregroundColor: Colors.white,
                       textStyle: TextStyle(color: Colors.white),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
@@ -92,9 +104,9 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {},
                     child: Text(
                       "Entrar",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.labelLarge!.copyWith(color: Colors.white),
                     ),
                   ),
                 ),
@@ -142,17 +154,18 @@ class _LoginPageState extends State<LoginPage> {
                     'assets/google-logo.jpg',
                     width: 20,
                   ),
-                  label: const Text(
+                  label: Text(
                     'Entrar com o google',
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
+                    style: Theme.of(context).textTheme.labelLarge,
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
-                Text("Não tem uma conta? Cadastre-se"),
+                Text(
+                  "Não tem uma conta? Cadastre-se",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ],
             ),
           ),
