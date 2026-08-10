@@ -37,7 +37,6 @@ abstract final class AppTextTheme {
       fontSize: 14,
       fontWeight: FontWeight.w600,
     ),
-
     labelMedium: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w500,

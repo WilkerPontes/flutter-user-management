@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_user_management/app/theme/app_colors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -80,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text(
                       "Esqueceu sua senha?",
                       style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                        color: AppColors.primary,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                   ],
@@ -90,11 +89,11 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(
                   width: double.infinity,
+                  height: 44,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).colorScheme.primary,
-                      foregroundColor: Colors.white,
-                      textStyle: TextStyle(color: Colors.white),
+                      foregroundColor: Theme.of(context).colorScheme.onPrimary,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                           10.0,
@@ -104,9 +103,12 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {},
                     child: Text(
                       "Entrar",
-                      style: Theme.of(
-                        context,
-                      ).textTheme.labelLarge!.copyWith(color: Colors.white),
+                      style:
+                          Theme.of(
+                            context,
+                          ).textTheme.labelLarge!.copyWith(
+                            color: Theme.of(context).colorScheme.onSecondary,
+                          ),
                     ),
                   ),
                 ),
@@ -118,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                     Expanded(
                       child: Container(
                         height: 1,
-                        color: Colors.grey,
+                        color: Theme.of(context).dividerColor,
                       ),
                     ),
                     const SizedBox(
@@ -131,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                     Expanded(
                       child: Container(
                         height: 1,
-                        color: Colors.grey,
+                        color: Theme.of(context).dividerColor,
                       ),
                     ),
                   ],
@@ -139,24 +141,33 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 20,
                 ),
-                FilledButton.icon(
-                  style: FilledButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    side: BorderSide(width: 1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        10.0,
-                      ), // Altere o valor do raio aqui
+                SizedBox(
+                  height: 44,
+                  child: FilledButton.icon(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: Theme.of(context).colorScheme.surface,
+                      foregroundColor: Theme.of(context).colorScheme.onSurface,
+                      side: BorderSide(
+                        width: 1,
+                        color: Theme.of(context).dividerColor,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                          10.0,
+                        ), // Altere o valor do raio aqui
+                      ),
                     ),
-                  ),
-                  onPressed: () {},
-                  icon: Image.asset(
-                    'assets/google-logo.jpg',
-                    width: 20,
-                  ),
-                  label: Text(
-                    'Entrar com o google',
-                    style: Theme.of(context).textTheme.labelLarge,
+                    onPressed: () {},
+                    icon: SvgPicture.asset(
+                      'assets/google-icon.svg',
+                      width: 20,
+                    ),
+                    label: Text(
+                      'Entrar com o google',
+                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(
